@@ -3,21 +3,22 @@
 本项目实现了pdf转化为mmd文件。
 
 ## Quick Start
-1.拉取项目
+### 1.拉取项目
+    
     git clone https://github.com/infinityeffect/pdf2markdown.git
 
-2.配置conda环境（通过ymal 安装环境）
+### 2.配置conda环境（通过ymal 安装环境）
 
     conda env create -f environment.yml -n DeepSeek-OCR
 
-3.从hugging face上下载deepseek ocr权重等文件，或者运行
+### 3.从hugging face上下载deepseek ocr权重等文件，或者运行
     
     python .\download.py
 
-4.项目结构
+### 4.项目结构
 
 
-5.使用代码执行转化
+### 5.使用代码执行转化
 
     from tool.infer import pdf2mark
     from tool.pipeline import pdf2mark_pipline
