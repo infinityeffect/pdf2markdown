@@ -1,6 +1,6 @@
 
 # 内容
-本项目实现了pdf转化为mmd文件。
+本项目借助ocr模型实现了pdf转化为markdown。
 
 ## Quick Start
 ### 1.拉取项目
