@@ -11,6 +11,8 @@
 
     conda env create -f environment.yml -n DeepSeek-OCR
 
+    conda activate DeepSeek-OCR
+
 ### 3.从hugging face上下载deepseek ocr权重等文件，或者运行
     
     python .\download.py
@@ -32,5 +34,10 @@
  或者
 
     python convert.py test_data/p2.pdf
+
+## 配置建议
+显卡显存 >= 8GB
+
+测试环境：Win10
 
 
