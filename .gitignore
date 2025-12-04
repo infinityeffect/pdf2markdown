@@ -1,0 +1,4 @@
+deepseek_ocr/
+.idea/
+__pycache__/
+*.pyc
