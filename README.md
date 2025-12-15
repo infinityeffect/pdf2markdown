@@ -28,6 +28,8 @@
     
     python .\download.py
 
+    将modeling_deepseekocr.py拖入deepseek_ocr文件夹下替换原始的文件
+
 ### 4.项目结构
 
 
@@ -66,11 +68,8 @@
 
 # 未来升级
 
-## 1.bash上不在输出识别结果（提交一份新的deepseekocr推理文件即可）
 
-## 2.跨平台支持（目前只在win平台调试）
+## 1.跨平台支持（目前只在win平台调试）
 
-## 3.test数据只留一个测试样例
 
-## 4. 项目文件优化
 
