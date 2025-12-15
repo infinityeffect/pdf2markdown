@@ -46,9 +46,21 @@
 
     python convert.py test_data/p2.pdf
 
-## 配置建议
+# 配置建议
 显卡显存 >= 8GB
 
 测试环境：Win10
 
+# 备注
+本项目默认支持flash-attn，如果想关闭flash-attn，请在
+
+    infer.py
+    model = AutoModel.from_pretrained(
+        model_name,
+        trust_remote_code=True,
+        use_safetensors=True,
+       # _attn_implementation='flash_attention_2'
+    )
+
+将flash-attn选项注释掉即可
 
