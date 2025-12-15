@@ -7,6 +7,7 @@ from typing import List, Optional
 import fitz  # PyMuPDF
 import torch
 from transformers import AutoModel, AutoTokenizer
+from tqdm import tqdm  # <--- 1. 引入 tqdm 库
 
 __all__ = ["pdf2mark"]
 
@@ -52,6 +53,7 @@ def _load_ocr_model(
     tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
     model = AutoModel.from_pretrained(
         model_name,
+        # _attn_implementation='flash_attention_2'
         trust_remote_code=True,
         use_safetensors=True,
     )
@@ -223,7 +225,7 @@ def _pdf_to_markdown(
 
     # 2. 每一页调用 infer，收集各自的 result.mmd
     page_mmd_paths: List[Path] = []
-    for idx, img_path in enumerate(image_paths, start=1):
+    for idx, img_path in enumerate(tqdm(image_paths, desc="OCR 处理进度", unit="页"), start=1):
         mmd_path = _run_infer_and_get_mmd(
             image_file=img_path,
             pdf_path=pdf_path,
