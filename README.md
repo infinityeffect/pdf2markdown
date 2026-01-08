@@ -22,6 +22,9 @@
 
     pip install -r requirements.txt
 
+    pip install langchain_openai langchain_core langchain_text_splitters
+
+    # 根据平台自行选择，这里给出的实例是win
     pip install flash_attn-2.7.0.post2-cp312-cp312-win_amd64.whl
 
 ### 3.从hugging face上下载deepseek ocr权重等文件，或者运行
@@ -48,12 +51,13 @@
 
 ### 6.转化md文件（解决格式问题）
 
-    python extra_function/process.py test_data\ocr_output_p1
+    python extra_function/process.py test_data\ocr_output_p2
+
 
 ### 7.md文件翻译（外文转化）
 
     #在运行本步骤之前，准备一个硅基流动的api密钥，默认放在data文件夹下，也可以指定（假定放在test_data下）
-    python extra_function/online_inter.py test_data/ocr_output_p1_clean/ocr_output_p1_cleaned.md --apikey test_data/api_key.txt 
+    python extra_function/online_inter.py test_data/ocr_output_p1_clean/ocr_output_p2_cleaned.md --apikey test_data/api_key.txt 
 
 # 项目功能
 
@@ -84,5 +88,6 @@
 
 ## 1.跨平台支持（目前只在win平台调试）
 
+## 2.Linux上会存在环境冲突
 
 
