@@ -38,15 +38,28 @@
     from tool.infer import pdf2mark
     from tool.pipeline import pdf2mark_pipline
     pdf = "test_data/p2.pdf"
-    # 串行版本（永远安全）
     # out_path = pdf2mark(pdf)
-    # 并行版本：自动检测显存，不满足条件时会自动回退到串行
     out_path = pdf2mark_pipline(pdf)
     print("生成文件：", out_path)
 
  或者
 
     python convert.py test_data/p2.pdf
+
+### 6.转化md文件（解决格式问题）
+
+    python extra_function/process.py test_data\ocr_output_p1
+
+### 7.md文件翻译（外文转化）
+
+    #在运行本步骤之前，准备一个硅基流动的api密钥，默认放在data文件夹下，也可以指定（假定放在test_data下）
+    python extra_function/online_inter.py test_data/ocr_output_p1_clean/ocr_output_p1_cleaned.md --apikey test_data/api_key.txt 
+
+# 项目功能
+
+## pdf转化为markdown
+
+## 
 
 # 配置建议
 显卡显存 >= 8GB
